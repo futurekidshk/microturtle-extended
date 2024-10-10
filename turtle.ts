@@ -166,6 +166,22 @@ namespace turtle {
 
         _delay = Math.max(1, Math.min(50, Math.idiv(1000, stepsPerSecond)));
     }
+    
+    /**
+     * Resets the display. Use this over blocks in the Basic category, as they do not update the internal representation of the image.
+     */
+    //% blockId=clear
+    //% block="clear"
+    export function clearScreen(): void {
+        _img = images.createImage(`
+                . . . . .
+                . . . . .
+                . . . . .
+                . . . . .
+                . . . . .
+                `);
+        paint();
+    }
 
     // auto-initialize
     init()
